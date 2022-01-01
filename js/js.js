@@ -2,6 +2,7 @@
 const containerSize = 520;
 createGrid(16);
 
+
 // Create the start Grid for the Sketchpad 16x16
 function createGrid (numberOfSquares) {
     // Create container for the grid which keeps its height and width
@@ -25,6 +26,8 @@ function createGrid (numberOfSquares) {
     };
     gridColumn.appendChild(container);
     hoverSetup();  
+    // newGame();
+    refresh();
 };
 
 // setup the hover event for the squares
@@ -41,4 +44,20 @@ function hoverSetup () {
 function changeColorOfSquare (e) {
     const hoveredSquare = document.querySelector(`#${e.target.id}`);
     hoveredSquare.classList.add('hovered');
+};
+
+// Asks user for input of grid size and starts a new game
+function newGame() {
+    alert('newGame')
+}
+
+// refreshes the grid
+function refresh() {
+    const refreshButton = document.querySelector('#refresh');
+    refreshButton.addEventListener('click', function(e) {
+        const squares = document.querySelectorAll('.square');
+        squares.forEach (item => {
+            item.classList.remove('hovered');
+        });
+    });
 };
