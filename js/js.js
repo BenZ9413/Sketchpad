@@ -27,7 +27,7 @@ function createGrid (numberOfSquares) {
     hoverSetup();  
     newGame();
     refresh();
-    schatzMode();
+    schatzMode(); // easter egg for girlfriend
 };
 
 // setup the hover event for the squares
@@ -44,6 +44,18 @@ function hoverSetup () {
 function changeColorOfSquare (e) {
     const hoveredSquare = document.querySelector(`#${e.target.id}`);
     hoveredSquare.classList.add('hovered');
+    /*for (let i = 10; i < 110; i+10) {
+        let newOpacity = i;
+        let opacityLevel = i / 100;
+        
+        if (!hoveredSquare.newOpacity) {
+            console.log(hoveredSquare.newOpacity);
+            console.log(opacityLevel);
+            hoveredSquare.classList.add(newOpacity);
+            hoveredSquare.setAttribute('style', `opacity: ${opacityLevel}`);
+            break
+        };
+    }; */
 };
 
 // Asks user for input of grid size and starts a new game
