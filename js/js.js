@@ -26,7 +26,7 @@ function createGrid (numberOfSquares) {
     };
     gridColumn.appendChild(container);
     hoverSetup();  
-    // newGame();
+    newGame();
     refresh();
 };
 
@@ -48,8 +48,31 @@ function changeColorOfSquare (e) {
 
 // Asks user for input of grid size and starts a new game
 function newGame() {
-    alert('newGame')
-}
+    const newGameButton = document.querySelector('#newGrid');
+    newGameButton.addEventListener('click', restructure);
+};
+
+// remove old structure and create the new one
+function restructure () {
+    let newGridSize = Number(prompt('What grid size do you want (max 100)?'));
+    if (isNaN(newGridSize)) {
+        alert('NOT A NUMBER! Please try again.');
+    } else {
+        const newGameButton = document.querySelector('#newGrid');
+        newGameButton.removeEventListener('click', restructure);
+        deleteCurrentGrid();
+        if (newGridSize > 100) newGridSize = 100;
+        createGrid(newGridSize);
+    };
+};
+
+// delete the current grid
+function deleteCurrentGrid () {
+    const gridColumn = document.querySelector('.gridColumn');
+    while (gridColumn.firstChild) {
+        gridColumn.removeChild(gridColumn.lastChild);
+    };
+};
 
 // refreshes the grid
 function refresh() {
