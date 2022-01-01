@@ -8,3 +8,7 @@ body {
 .row {
     display: flex;
 }
+
+.hovered {
+    background-color: black;
+}
