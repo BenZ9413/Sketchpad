@@ -16,10 +16,29 @@ function createGrid (numberOfSquares) {
         containerRow.classList.add('row');
         for (let x = 0; x < numberOfSquares; x++) {
             const square = document.createElement('div');
+            square.classList.add('square');
             square.setAttribute('style', `min-height: ${squareSize}px;min-width: ${squareSize}px`);
+            square.setAttribute('id', `row${i}column${x}`);
             containerRow.appendChild(square);
         };
         container.appendChild(containerRow);
-    }
+    };
     body.appendChild(container);
-}
+    hoverSetup();  
+};
+
+// setup the hover event for the squares
+function hoverSetup () {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach (item => {
+        item.addEventListener('mouseover', function(e) {
+            changeColorOfSquare(e);
+        });
+    });
+};
+
+// change the color of the square
+function changeColorOfSquare (e) {
+    const hoveredSquare = document.querySelector(`#${e.target.id}`);
+    hoveredSquare.classList.add('hovered');
+};
