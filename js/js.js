@@ -11,7 +11,6 @@ function createGrid (numberOfSquares) {
     container.setAttribute('style', `height: ${containerSize}px; width: ${containerSize}px; border: 3px solid black`);
     // loop to create the needed amount of squares
     const squareSize = Math.floor(containerSize / numberOfSquares*10)/10;
-    console.log(squareSize);
     for (let i = 0; i < numberOfSquares; i++) {
         const containerRow = document.createElement('div');
         containerRow.classList.add('row');
