@@ -7,9 +7,23 @@ body {
     background-color: #dddbf1;
 }
 
-/*Styling of the left column*/
+button {
+    background-color: #3C4F76;
+    border: 2px solid #dddbf1;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #dddbf1;
+    padding: 10px;
+}
 
-.leftColumn {
+/*Styling of both columns*/
+
+.leftColumn,
+.rightColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     background-color: #3C4F76;
 }
@@ -29,11 +43,4 @@ body {
 
 .hovered {
     background-color: #383f51;
-}
-
-/*Styling of the right column*/
-
-.rightColumn {
-    width: 200px;
-    background-color: #3C4F76;
 }
