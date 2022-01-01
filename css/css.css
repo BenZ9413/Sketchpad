@@ -1,5 +1,23 @@
 body {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: stretch;
+    margin: 0px;
+    background-color: #dddbf1;
+}
+
+/*Styling of the left column*/
+
+.leftColumn {
+    width: 200px;
+    background-color: #3C4F76;
+}
+
+/*Styling of the center column*/
+
+.gridColumn {
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px;
@@ -10,5 +28,12 @@ body {
 }
 
 .hovered {
-    background-color: black;
+    background-color: #383f51;
+}
+
+/*Styling of the right column*/
+
+.rightColumn {
+    width: 200px;
+    background-color: #3C4F76;
 }
