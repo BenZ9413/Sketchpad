@@ -5,7 +5,7 @@ createGrid(16);
 // Create the start Grid for the Sketchpad 16x16
 function createGrid (numberOfSquares) {
     // Create container for the grid which keeps its height and width
-    const body = document.querySelector('body');
+    const gridColumn = document.querySelector('.gridColumn');
     const container = document.createElement('div');
     container.setAttribute('style', `height: ${containerSize}px; width: ${containerSize}px; border: 3px solid black`);
     // loop to create the needed amount of squares
@@ -23,7 +23,7 @@ function createGrid (numberOfSquares) {
         };
         container.appendChild(containerRow);
     };
-    body.appendChild(container);
+    gridColumn.appendChild(container);
     hoverSetup();  
 };
 
