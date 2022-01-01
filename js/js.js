@@ -27,6 +27,7 @@ function createGrid (numberOfSquares) {
     hoverSetup();  
     newGame();
     refresh();
+    schatzMode();
 };
 
 // setup the hover event for the squares
@@ -82,4 +83,14 @@ function refresh() {
             item.classList.remove('hovered');
         });
     });
+};
+
+// Bei Rechtsklick malt man nurnoch, wenn man die linke Maustaste gedrückt hält
+function schatzMode() {
+    const body = document.querySelector('body');
+    body.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        alert('I love you!');
+        return false;
+    }, false);
 };
